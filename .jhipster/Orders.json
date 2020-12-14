@@ -1,0 +1,39 @@
+{
+  "name": "Orders",
+  "fields": [
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderItems",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "orderItems"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "users",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "users",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201214141609",
+  "entityTableName": "orders",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

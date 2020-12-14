@@ -1,0 +1,57 @@
+{
+  "name": "OrderItems",
+  "fields": [
+    {
+      "fieldName": "itemTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemImagePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemPrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "itemCodes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "toId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isSentToId",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "orderItems",
+      "relationshipName": "orders",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201214141709",
+  "entityTableName": "order_items",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
