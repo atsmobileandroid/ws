@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cardoholicApp.users.home.title">Users</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-users" [routerLink]="['/users/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="cardoholicApp.users.home.createLabel">
+            Create a new Users
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="users?.length === 0">
+        <span jhiTranslate="cardoholicApp.users.home.notFound">No users found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="users && users.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.password">Password</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.fullName">Full Name</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.imagePath">Image Path</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.phoneNumber">Phone Number</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.isActive">Is Active</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.deviceType">Device Type</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.deviceToken">Device Token</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.balance">Balance</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.basket">Basket</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.countries">Countries</span></th>
+                    <th scope="col" ><span jhiTranslate="cardoholicApp.users.userType">User Type</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let users of users ;trackBy: trackId">
+                    <td><a [routerLink]="['/users', users.id, 'view']">{{ users.id }}</a></td>
+                    <td>{{ users.email }}</td>
+                    <td>{{ users.password }}</td>
+                    <td>{{ users.fullName }}</td>
+                    <td>{{ users.imagePath }}</td>
+                    <td>{{ users.phoneNumber }}</td>
+                    <td>{{ users.createdDate }}</td>
+                    <td>{{ users.isActive }}</td>
+                    <td>{{ users.deviceType }}</td>
+                    <td>{{ users.deviceToken }}</td>
+                    <td>{{ users.balance }}</td>
+                    <td>
+                        <div *ngIf="users.basketId">
+                            <a [routerLink]="['/basket', users.basketId , 'view']" >{{ users.basketId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="users.countriesId">
+                            <a [routerLink]="['/countries', users.countriesId , 'view']" >{{ users.countriesId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="users.userTypeId">
+                            <a [routerLink]="['/user-type', users.userTypeId , 'view']" >{{ users.userTypeId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/users', users.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/users', users.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(users)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

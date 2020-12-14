@@ -47,6 +47,20 @@ public class CacheConfiguration {
             createCache(cm, com.cardoholic.domain.User.class.getName());
             createCache(cm, com.cardoholic.domain.Authority.class.getName());
             createCache(cm, com.cardoholic.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.cardoholic.domain.Basket.class.getName());
+            createCache(cm, com.cardoholic.domain.Basket.class.getName() + ".items");
+            createCache(cm, com.cardoholic.domain.Countries.class.getName());
+            createCache(cm, com.cardoholic.domain.Items.class.getName());
+            createCache(cm, com.cardoholic.domain.Items.class.getName() + ".itemCodes");
+            createCache(cm, com.cardoholic.domain.ItemCodes.class.getName());
+            createCache(cm, com.cardoholic.domain.ItemPrices.class.getName());
+            createCache(cm, com.cardoholic.domain.Levels.class.getName());
+            createCache(cm, com.cardoholic.domain.Orders.class.getName());
+            createCache(cm, com.cardoholic.domain.Orders.class.getName() + ".orderItems");
+            createCache(cm, com.cardoholic.domain.OrderItems.class.getName());
+            createCache(cm, com.cardoholic.domain.Users.class.getName());
+            createCache(cm, com.cardoholic.domain.Users.class.getName() + ".orders");
+            createCache(cm, com.cardoholic.domain.UserType.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

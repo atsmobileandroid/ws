@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="users">
+            <h2><span jhiTranslate="cardoholicApp.users.detail.title">Users</span> {{ users.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cardoholicApp.users.email">Email</span></dt>
+                <dd>
+                    <span>{{ users.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.password">Password</span></dt>
+                <dd>
+                    <span>{{ users.password }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.fullName">Full Name</span></dt>
+                <dd>
+                    <span>{{ users.fullName }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{ users.imagePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ users.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ users.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ users.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.deviceType">Device Type</span></dt>
+                <dd>
+                    <span>{{ users.deviceType }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.deviceToken">Device Token</span></dt>
+                <dd>
+                    <span>{{ users.deviceToken }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.balance">Balance</span></dt>
+                <dd>
+                    <span>{{ users.balance }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.basket">Basket</span></dt>
+                <dd>
+                    <div *ngIf="users.basketId">
+                        <a [routerLink]="['/basket', users.basketId, 'view']">{{ users.basketId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.countries">Countries</span></dt>
+                <dd>
+                    <div *ngIf="users.countriesId">
+                        <a [routerLink]="['/countries', users.countriesId, 'view']">{{ users.countriesId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.users.userType">User Type</span></dt>
+                <dd>
+                    <div *ngIf="users.userTypeId">
+                        <a [routerLink]="['/user-type', users.userTypeId, 'view']">{{ users.userTypeId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/users', users.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

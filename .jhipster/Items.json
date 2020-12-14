@@ -1,0 +1,55 @@
+{
+  "name": "Items",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imagePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isLeaf",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "itemPrices",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "itemPrices",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "itemCodes",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "itemCodes"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "basket",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "basket",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201214141209",
+  "entityTableName": "items",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
