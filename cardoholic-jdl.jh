@@ -1,0 +1,99 @@
+
+entity Basket {
+	count Integer,
+    toId String,
+    addedDate String
+}
+
+entity Countries {
+  countryNameEn String,
+  countryNameAr String,
+  flagImagePath String ,
+  currencyNameEn String,
+  currencyNameAr String,
+  exchangeRate String  
+}
+
+entity Items {
+  title String,
+  description String,
+  imagePath String,
+  isLeaf Boolean 
+}
+
+entity ItemCodes {
+  code String
+}
+
+entity ItemPrices {
+  price String
+}
+
+entity Levels {
+  title String,
+  color String
+}
+
+
+entity Orders {
+  totalPrice String,
+  createdDate String,
+}
+
+entity OrderItems{
+  itemTitle String,
+  itemDescription String,
+  itemImagePath String,
+  itemPrice String,
+  itemCount Integer,
+  itemCodes String,
+  toId String,
+  isSentToId Boolean
+}
+
+
+entity Users {
+  email String,
+  password String,
+  fullName String,
+  imagePath String,
+  phoneNumber String,
+  createdDate String,
+  isActive Boolean,
+  deviceType Integer,
+  deviceToken String,
+  balance String
+}
+
+entity UserType{
+  name String,
+}
+
+
+relationship OneToOne {
+    Users{basket} to Basket,
+    Items{itemPrices} to ItemPrices,
+    ItemPrices{levels} to Levels
+}
+
+relationship ManyToOne {
+	Users{countries} to Countries,
+    Users{userType} to UserType
+}
+
+relationship OneToMany {
+	Users{orders} to Orders,
+    Orders{orderItems} to OrderItems,
+    Basket{items} to Items,
+    Items{itemCodes} to ItemCodes
+}
+
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
