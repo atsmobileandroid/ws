@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderItems">
+            <h2><span jhiTranslate="cardoholicApp.orderItems.detail.title">Order Items</span> {{ orderItems.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemTitle">Item Title</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemTitle }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemDescription">Item Description</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemImagePath">Item Image Path</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemImagePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemPrice">Item Price</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemCount">Item Count</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemCount }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.itemCodes">Item Codes</span></dt>
+                <dd>
+                    <span>{{ orderItems.itemCodes }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.toId">To Id</span></dt>
+                <dd>
+                    <span>{{ orderItems.toId }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.isSentToId">Is Sent To Id</span></dt>
+                <dd>
+                    <span>{{ orderItems.isSentToId }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orderItems.orders">Orders</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.orders">
+                        <a [routerLink]="['/orders', orderItems.orders?.id, 'view']">{{ orderItems.orders?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-items', orderItems.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="itemCodes">
+            <h2><span jhiTranslate="cardoholicApp.itemCodes.detail.title">Item Codes</span> {{ itemCodes.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cardoholicApp.itemCodes.code">Code</span></dt>
+                <dd>
+                    <span>{{ itemCodes.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.itemCodes.items">Items</span></dt>
+                <dd>
+                    <div *ngIf="itemCodes.items">
+                        <a [routerLink]="['/items', itemCodes.items?.id, 'view']">{{ itemCodes.items?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item-codes', itemCodes.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

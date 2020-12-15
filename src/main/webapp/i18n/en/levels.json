@@ -1,0 +1,23 @@
+{
+  "cardoholicApp": {
+    "levels": {
+      "home": {
+        "title": "Levels",
+        "createLabel": "Create a new Levels",
+        "createOrEditLabel": "Create or edit a Levels",
+        "notFound": "No Levels found"
+      },
+      "created": "A new Levels is created with identifier {{ param }}",
+      "updated": "A Levels is updated with identifier {{ param }}",
+      "deleted": "A Levels is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Levels {{ id }}?"
+      },
+      "detail": {
+        "title": "Levels"
+      },
+      "title": "Title",
+      "color": "Color"
+    }
+  }
+}
