@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orders">
+            <h2><span jhiTranslate="cardoholicApp.orders.detail.title">Orders</span> {{ orders.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cardoholicApp.orders.totalPrice">Total Price</span></dt>
+                <dd>
+                    <span>{{ orders.totalPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orders.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ orders.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="cardoholicApp.orders.users">Users</span></dt>
+                <dd>
+                    <div *ngIf="orders.users">
+                        <a [routerLink]="['/users', orders.users?.id, 'view']">{{ orders.users?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/orders', orders.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

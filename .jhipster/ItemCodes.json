@@ -1,0 +1,29 @@
+{
+  "name": "ItemCodes",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "items",
+      "otherEntityRelationshipName": "itemCodes",
+      "relationshipName": "items",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201215133719",
+  "entityTableName": "item_codes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

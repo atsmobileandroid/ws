@@ -1,0 +1,30 @@
+{
+  "name": "ItemPrices",
+  "fields": [
+    {
+      "fieldName": "price",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "levels",
+      "otherEntityRelationshipName": "itemPrices",
+      "relationshipName": "levels",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201215133819",
+  "entityTableName": "item_prices",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

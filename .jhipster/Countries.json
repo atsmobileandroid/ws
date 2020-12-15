@@ -1,0 +1,41 @@
+{
+  "name": "Countries",
+  "fields": [
+    {
+      "fieldName": "countryNameEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryNameAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "flagImagePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currencyNameEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currencyNameAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exchangeRate",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201215133519",
+  "entityTableName": "countries",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Users",
+  "fields": [
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imagePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "deviceType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "deviceToken",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "basket",
+      "otherEntityRelationshipName": "users",
+      "relationshipName": "basket",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "users",
+      "relationshipName": "orders"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "countries",
+      "otherEntityRelationshipName": "users",
+      "relationshipName": "countries",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userType",
+      "otherEntityRelationshipName": "users",
+      "relationshipName": "userType",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201215134219",
+  "entityTableName": "users",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
